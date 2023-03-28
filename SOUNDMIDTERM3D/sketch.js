@@ -19,8 +19,6 @@ function setup() {
   analyzer.setInput(song);
   
  
-
-  
 }
 
 function mousePressed() {
@@ -77,10 +75,11 @@ function draw() {
   sphere(20 + rms * 300);
   pop();
 
+ 
   push();
   fill(0, 255, 255);
-  translate(xAxis, yAxis, -1000, -1000);
-  sphere(5 + rms * 160);
+  translate(xAxis, yAxis, -7000, -5000);
+  sphere(50 + rms * 300);
   pop();
 
   let cubeSize = 20 + rms * 1000;
@@ -113,7 +112,7 @@ function draw() {
   pop();
 
   push();
-  translate(600, -1000, -2500);
+  translate(600, -1500, -4000);
   fill(random(255), random(255), random(255));
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
