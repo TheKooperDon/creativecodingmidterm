@@ -62,12 +62,16 @@ function draw() {
   pop();
   
   push();
+  stroke('red');
+  strokeWeight(.5);
   fill(255, 255, 0, 50);
   translate(-300, 0, -1500);
   sphere(20 + rms * 300);
   pop();
   
   push();
+  stroke(random(random(255), random(255), random(255)));
+  strokeWeight(2);
   fill(255, 0, 0, 50);
   translate(300, 0, -1500);
   sphere(20 + rms * 300);
