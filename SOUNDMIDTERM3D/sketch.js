@@ -5,7 +5,7 @@ let y = 0;
 
 
 function preload() {
-  song = loadSound('../storageforsounds/scarletfire.mp3');
+  song = loadSound('../songs/scarletfire.mp3');
 }
 
 function setup() {
