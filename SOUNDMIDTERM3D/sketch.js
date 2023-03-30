@@ -2,6 +2,7 @@ let song, analyzer;
 let xSpeed = 2, xAxis = 50;
 let ySpeed = 5, yAxis = 50;
 let y = 0;
+let zAxis = 0;
 
 
 function preload() {
@@ -39,10 +40,10 @@ function draw() {
   xAxis += xSpeed;
   yAxis += ySpeed;
 
-  if (xAxis > width - 10 || xAxis < 10) {
+  if (xAxis > width - -1000 || xAxis < -1000) {
     xSpeed *= -1;
   }
-  if (yAxis > height - 10 || yAxis < 10) {
+  if (yAxis > height - -1000 || yAxis < -1000) {
     ySpeed *= -1;
   }
   
@@ -56,40 +57,55 @@ function draw() {
   push();
   fill(255, 255, 255, 50);
   translate(0, 0, -1000);
-  sphere(5 + rms * 300);
+  rotateX(millis() / 1000);
+  rotateY(millis() / 1000);
+  rotateZ(millis() / 1000);
+  translate(300, 0, -50);
+  sphere(25 + rms * 200);
   pop();
   
   push();
   stroke('red');
   strokeWeight(.5);
+  
   fill(255, 255, 0, 50);
-  translate(-300, 0, -1500);
-  sphere(20 + rms * 300);
+  
+  rotateZ(millis() / 1000);
+  translate(-300, 0, 1);
+  sphere(10 + rms * 100);
   pop();
   
   push();
-  stroke(random(random(255), random(255), random(255)));
-  strokeWeight(2);
-  fill(255, 0, 0, 50);
-  translate(300, 0, -1500);
-  sphere(20 + rms * 300);
+  stroke(0, 0, 255);
+  strokeWeight(1);
+  fill(255,255,0)
+ 
+  rotateY(millis() / 1000);
+  translate(300, 0, -50);
+  sphere(10 + rms * 100);
   pop();
 
  
   push();
-  fill(0, 255, 255);
+  fill(random(255), random(255), 255);
+  
   translate(xAxis, yAxis, -7000, -5000);
-  sphere(50 + rms * 300);
+  rotateZ(millis() / 1000);
+  box(400 + rms * 500);
+  
   pop();
 
   let cubeSize = 20 + rms * 1000;
   let ringSize = 20 + rms * 100;
+  let ringSize2 = 20 + rms * 200;
   push();
   translate(width/2, height/2, -1500);
   rotateX(frameCount * 0.01);
   rotateY(frameCount * 0.01);
   rotateZ(frameCount * 0.01);
-  fill(255, 255, 255, 50);
+  stroke(random(255),random(255),random(255))
+  strokeWeight(5)
+  noFill();
   box(cubeSize);
   pop();
   
@@ -102,13 +118,14 @@ function draw() {
   torus(-1000, 20);
   pop();
 
-  translate(-750, 0, 0);
+  translate(-750, -100, 0);
   push();
-  fill(255,0,0)
-  rotateZ(frameCount * 0.001);
-  rotateX(frameCount * 0.001);
-  rotateY(frameCount * 0.001);
-  torus(ringSize);
+  fill(random(255), random(255), random(255))
+  stroke(1)
+  rotateZ(frameCount * 0.1);
+  rotateX(frameCount * 0.1);
+  rotateY(frameCount * 0.1);
+  torus(ringSize2,);
   pop();
 
   push();
